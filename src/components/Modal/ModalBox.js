@@ -6,13 +6,9 @@ import ModalHeader from "./ModalHeader";
 import ModalFooter from "./ModalFooter";
 import classNames from "classnames";
 
-function Modal({ children, className, isOpen, setIsOpen, maxW=""}) {
+function ModalBox({ children, className, isOpen, setIsOpen, isTransitioning, setIsTransitioning }) {
 
   const modalRef = useRef(null)
-
-  const [isTransitioning, setIsTransitioning] = useState(false) 
-  // we need this variable for showing the opening and closing animations(CSS transitions)
-  // isTransition is basically the copy of isOpen state but the false state has some delay (look in useEffect)
 
   const defaultClasses = `bg-white mx-auto w-full shadow-lg rounded ${isTransitioning && isOpen? "scale-100" : "scale-75"} transition-transform max-w-md`
 
@@ -71,4 +67,4 @@ function Modal({ children, className, isOpen, setIsOpen, maxW=""}) {
   )
 }
 
-export default Modal
+export default ModalBox
