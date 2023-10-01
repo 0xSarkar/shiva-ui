@@ -1,13 +1,10 @@
 import React, { createContext, useState } from "react";
-import { themeConfig } from "./theme";
 
 const ThemeContext = createContext('default')
 
-const ThemeProvider = ({ children }) => {
-  const [themeOptions, setThemeOptions] = useState(null)
-
+const ThemeProvider = ({ children, themeOptions }) => {
   return (
-    <ThemeContext.Provider value={themeConfig}>
+    <ThemeContext.Provider value={themeOptions}>
       { children }
     </ThemeContext.Provider>
   )

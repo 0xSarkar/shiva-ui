@@ -8,13 +8,14 @@ import Button from "./components/Button/Button";
 import ModalBox from "./components/Modal/ModalBox";
 import ModalBackdrop from "./components/Modal/ModalBackdrop";
 import { ThemeProvider } from "./contexts";
+import { themeOptions } from "./theme";
 
 function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   return(
     <>
-    <ThemeProvider>
-      
+    <ThemeProvider themeOptions={themeOptions}>
+
     <div className="p-4">
       <div className="my-4">
         <h2 className="text-xl text-gray-800">Buttons</h2>
