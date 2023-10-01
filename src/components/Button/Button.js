@@ -1,33 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
 import classNames from "classnames";
+import { ThemeContext } from "../../contexts";
 
 function Button({ children, variant="primary", className, ...props }) {
   let defaultClasses = ""
 
+  const theme = useContext(ThemeContext)
+
   switch(variant) {
     case "primary":
-      defaultClasses = "inline-block rounded bg-blue-600 px-5 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow hover:shadow-lg hover:bg-blue-500";
+      defaultClasses = `inline-block rounded bg-${theme.primaryColor} px-5 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow hover:shadow-lg hover:brightness-110`;
       break
     case "secondary":
-      defaultClasses = "inline-block rounded bg-purple-600 px-5 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow hover:shadow-lg hover:bg-purple-500";
+      defaultClasses = `inline-block rounded bg-${theme.secondaryColor} px-5 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow hover:shadow-lg hover:brightness-110`;
       break
     case "neutral":
-      defaultClasses = "inline-block rounded bg-neutral-200 px-5 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-800 shadow hover:shadow-lg hover:bg-neutral-300 hover:text-gray-900";
+      defaultClasses = `inline-block rounded bg-${theme.neutralColor} px-5 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-800 shadow hover:shadow-lg hover:brightness-95`;
       break
     case "boxed":
       defaultClasses = "inline-block rounded border bg-transparent px-5 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-800 shadow hover:shadow-lg hover:border-gray-300 hover:text-gray-900";
       break
     case "success":
-      defaultClasses = "inline-block rounded bg-green-600 px-5 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow hover:shadow-lg hover:bg-green-500";
+      defaultClasses = `inline-block rounded bg-${theme.successColor} px-5 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow hover:shadow-lg hover:brightness-110`;
       break
     case "danger":
-      defaultClasses = "inline-block rounded bg-red-600 px-5 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow hover:shadow-lg hover:bg-red-500";
+      defaultClasses = `inline-block rounded bg-${theme.dangerColor} px-5 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow hover:shadow-lg hover:brightness-110`;
       break
     case "warning":
-      defaultClasses = "inline-block rounded bg-yellow-400 px-5 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-800 shadow hover:shadow-lg hover:bg-yellow-300";
+      defaultClasses = `inline-block rounded bg-${theme.warningColor} px-5 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-800 shadow hover:shadow-lg hover:brightness-110`;
       break
     case "info":
-      defaultClasses = "inline-block rounded border bg-sky-500 px-5 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow hover:shadow-lg hover:bg-sky-400";
+      defaultClasses = `inline-block rounded border bg-${theme.infoColor} px-5 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow hover:shadow-lg hover:brightness-110`;
       break
     case "light":
       defaultClasses = "inline-block rounded bg-white px-5 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-800 shadow hover:shadow-lg hover:bg-gray-100";
