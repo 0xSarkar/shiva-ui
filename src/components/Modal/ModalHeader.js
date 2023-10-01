@@ -6,7 +6,7 @@ function ModalHeader({ children, className, setIsOpen }) {
   const updatedClasses = classNames(defaultClasses, className)
   
   return (
-  <div className="flex items-center justify-between px-4 pt-4 pb-4 border-b rounded-t">
+  <div className="flex items-center justify-between px-6 pt-4 pb-2.5 border-b rounded-t">
     <h3 className={updatedClasses}>
       {children}
     </h3>

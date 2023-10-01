@@ -18,13 +18,13 @@ function App() {
 
       <ModalBackdrop isOpen={modalIsOpen} setIsOpen={setModalIsOpen}>
         <ModalBox>
-          <ModalHeader>Modal Header Here</ModalHeader>
+          <ModalHeader>Awesome Modal Header</ModalHeader>
           <ModalBody>
             <p>
               Modal's body text goes here...
             </p>
             <p className="mt-2">
-              The default width of modals is `max-w-md`. You can update it by passing your desired width class to the `ModalBody` component.
+              The default width of modals is `max-w-md`. You can update it by passing your desired width class to the `ModalBox` component.
             </p>
           </ModalBody>
           <ModalFooter>

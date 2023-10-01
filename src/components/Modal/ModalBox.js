@@ -11,7 +11,6 @@ function ModalBox({ children, className, isOpen, setIsOpen, isTransitioning, set
   const modalRef = useRef(null)
 
   const defaultClasses = `bg-white mx-auto w-full shadow-lg rounded ${isTransitioning && isOpen? "scale-100" : "scale-75"} transition-transform max-w-md`
-
   const updatedClasses = classNames(defaultClasses, className)
 
   useEffect(() => { 
