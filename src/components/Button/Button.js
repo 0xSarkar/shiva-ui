@@ -3,47 +3,33 @@ import classNames from "classnames";
 import { ThemeContext } from "../../contexts";
 
 function Button({ children, variant="primary", className, ...props }) {
-  let defaultClasses = "inline-block rounded px-5 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal shadow hover:shadow-lg hover:brightness-110"
-
   const theme = useContext(ThemeContext)
 
-  switch(variant) {
-    case "primary":
-      defaultClasses = classNames(defaultClasses, theme.primary.bg, "text-white")
-      break
-    case "secondary":
-      defaultClasses = classNames(defaultClasses, theme.secondary.bg, "text-white")
-      break
-    case "neutral":
-      defaultClasses = classNames(defaultClasses, theme.neutral.bg, "text-gray-800 hover:brightness-95")
-      break
-    case "boxed":
-      defaultClasses = classNames(defaultClasses, "bg-transparent border text-gray-800 hover:border-gray-300 hover:text-gray-900")
-      break
-    case "success":
-      defaultClasses = classNames(defaultClasses, theme.success.bg, "text-white")
-      break
-    case "danger":
-      defaultClasses = classNames(defaultClasses, theme.danger.bg, "text-white")
-      break
-    case "warning":
-      defaultClasses = classNames(defaultClasses, theme.warning.bg, "text-gray-800")
-      break
-    case "info":
-      defaultClasses = classNames(defaultClasses, theme.info.bg, "text-white")
-      break
-    case "light":
-      defaultClasses = classNames(defaultClasses, "bg-white text-gray-800 hover:bg-gray-100")
-      break
-    case "dark":
-      defaultClasses = classNames(defaultClasses, "bg-slate-600 text-white hover:bg-slate-500")
-      break
-    case "link":
-      defaultClasses = classNames(defaultClasses, "bg-transparent text-blue-500 underline hover:text-blue-700").replace("shadow", "").replace("hover:shadow-lg", "")
-      break
+  let defaultClasses = {
+    "primary": `inline-block rounded px-5 pb-2 pt-2.5 ${theme.primary.bg} text-xs text-white font-medium uppercase leading-normal shadow hover:shadow-lg hover:brightness-110`,
+    
+    "secondary": `inline-block rounded px-5 pb-2 pt-2.5 ${theme.secondary.bg} text-xs text-white font-medium uppercase leading-normal shadow hover:shadow-lg hover:brightness-110`,
+    
+    "neutral": `inline-block rounded px-5 pb-2 pt-2.5 ${theme.neutral.bg} text-xs text-gray-800 font-medium uppercase leading-normal shadow hover:shadow-lg hover:brightness-95`,
+    
+    "boxed": `inline-block rounded px-5 pb-2 pt-2.5 bg-transparent border text-xs text-gray-800 font-medium uppercase leading-normal shadow hover:shadow-lg hover:border-gray-300 hover:text-gray-900`,
+    
+    "success": `inline-block rounded px-5 pb-2 pt-2.5 ${theme.success.bg} text-xs text-white font-medium uppercase leading-normal shadow hover:shadow-lg hover:brightness-110`,
+    
+    "danger": `inline-block rounded px-5 pb-2 pt-2.5 ${theme.danger.bg} text-xs text-white font-medium uppercase leading-normal shadow hover:shadow-lg hover:brightness-110`,
+    
+    "warning": `inline-block rounded px-5 pb-2 pt-2.5 ${theme.warning.bg} text-xs text-gray-700 font-medium uppercase leading-normal shadow hover:shadow-lg hover:brightness-110`,
+    
+    "info": `inline-block rounded px-5 pb-2 pt-2.5 ${theme.info.bg} text-xs text-white font-medium uppercase leading-normal shadow hover:shadow-lg hover:brightness-110`,
+    
+    "light": `inline-block rounded px-5 pb-2 pt-2.5 bg-white text-xs text-gray-800 font-medium uppercase leading-normal shadow hover:shadow-lg hover:brightness-95`,
+    
+    "dark": `inline-block rounded px-5 pb-2 pt-2.5 bg-slate-600 text-xs text-white font-medium uppercase leading-normal shadow hover:shadow-lg hover:brightness-110`,
+    
+    "link": `inline-block rounded px-5 pb-2 pt-2.5 bg-transparent text-xs text-blue-500 underline font-medium uppercase leading-normal hover:text-blue-700`,
   }
-  
-  const updatedClasses = classNames(defaultClasses, className);
+
+  const updatedClasses = classNames(defaultClasses[variant], className);
 
   return (
   <button {...props} className={updatedClasses}>
