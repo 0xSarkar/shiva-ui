@@ -27,6 +27,8 @@ function Button({ children, variant="primary", className, ...props }) {
     "dark": `inline-block rounded px-5 pb-2 pt-2.5 ${theme.dark.bg} text-xs text-white font-medium uppercase leading-normal shadow hover:shadow-lg hover:brightness-110`,
     
     "link": `inline-block rounded px-5 pb-2 pt-2.5 bg-transparent text-xs text-blue-500 underline font-medium uppercase leading-normal hover:text-blue-700`,
+
+    "text": `inline-block px-5 pb-2 pt-2.5 bg-transparent text-xs text-gray-800 font-medium leading-normal`,
   }
 
   const updatedClasses = classNames(defaultClasses[variant], className);

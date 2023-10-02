@@ -37,6 +37,7 @@ function App() {
           <Button variant="light">Light</Button>
           <Button variant="dark" className="ml-2">Dark</Button>
           <Button variant="link" className="ml-2">Link</Button>
+          <Button variant="text" className="ml-2">Text</Button>
         </div>
       </div>
 
