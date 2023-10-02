@@ -11,6 +11,8 @@ function App() {
 
   const [dropdownSingleIsOpen, setDropdownSingleIsOpen] = useState(false)
   const [dropdownNestedIsOpen, setDropdownNestedIsOpen] = useState(false)
+  const [dropdownInnerIsOpen, setDropdownInnerIsOpen] = useState(false)
+  const [dropdownRightIsOpen, setDropdownRightIsOpen] = useState(false)
 
   return(
     <>
@@ -65,9 +67,32 @@ function App() {
             </Dropdown.List>
           </Dropdown.Wrapper>
 
-          <Dropdown.Wrapper isOpen={dropdownNestedIsOpen} setIsOpen={setDropdownNestedIsOpen} className="ml-2">
+          <Dropdown.Wrapper isOpen={dropdownNestedIsOpen} setIsOpen={setDropdownNestedIsOpen} className="ml-2" direction={"down"}>
             <Dropdown.Button variant="secondary">
               Nested Dropdown
+            </Dropdown.Button>
+            <Dropdown.List>
+              <Dropdown.Item>Item One</Dropdown.Item>
+              <Dropdown.Item>Item Two</Dropdown.Item>
+              <Dropdown.ItemNested>
+                <Dropdown.Wrapper isOpen={dropdownInnerIsOpen} setIsOpen={setDropdownInnerIsOpen} direction="right">
+                  <Dropdown.Button variant="text" className="text-sm px-0">
+                    Inner Dropdown
+                  </Dropdown.Button>
+                  <Dropdown.List>
+                    <Dropdown.Item>Inner Item One</Dropdown.Item>
+                    <Dropdown.Item>Inner Item Two</Dropdown.Item>
+                    <Dropdown.Item>Inner Item Three</Dropdown.Item>
+                  </Dropdown.List>
+                </Dropdown.Wrapper>
+              </Dropdown.ItemNested>
+              <Dropdown.Item>Item Four</Dropdown.Item>
+            </Dropdown.List>
+          </Dropdown.Wrapper>
+
+          <Dropdown.Wrapper isOpen={dropdownRightIsOpen} setIsOpen={setDropdownRightIsOpen} direction="right" className="ml-2">
+            <Dropdown.Button variant="neutral">
+              Dropdown Right
             </Dropdown.Button>
             <Dropdown.List>
               <Dropdown.Item> Item One</Dropdown.Item>

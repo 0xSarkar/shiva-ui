@@ -3,7 +3,7 @@ import DropdownButton from './DropdownButton'
 import classNames from 'classnames'
 import DropdownList from './DropdownList'
 
-function DropdownWrapper({ isOpen, setIsOpen, className, children }) {
+function DropdownWrapper({ isOpen, setIsOpen, className, direction="down", children }) {
   const defaultClasses = "inline-block relative"
 
   const updatedClasses = classNames(defaultClasses, className)
@@ -13,13 +13,13 @@ function DropdownWrapper({ isOpen, setIsOpen, className, children }) {
     {
       Children.map(children, (child) => {
         if(child.type == DropdownButton)
-          return cloneElement(child, {isOpen, setIsOpen})
+          return cloneElement(child, {isOpen, setIsOpen, direction})
       })
     }
     {
       Children.map(children, (child) => {
         if(child.type == DropdownList)
-          return cloneElement(child, {isOpen, setIsOpen})
+          return cloneElement(child, {isOpen, setIsOpen, direction})
       })
     }
     </div>
