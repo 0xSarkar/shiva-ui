@@ -10,7 +10,7 @@ function ModalBox({ children, className, isOpen, setIsOpen, isTransitioning, set
 
   const modalRef = useRef(null)
 
-  const defaultClasses = `bg-white mx-auto w-full shadow-lg rounded ${isTransitioning && isOpen? "scale-100" : "scale-75"} transition-transform max-w-md`
+  const defaultClasses = `bg-white mx-auto w-full shadow-lg rounded ${isTransitioning && isOpen? "scale-100" : "scale-75"} transition max-w-md`
   const updatedClasses = classNames(defaultClasses, className)
 
   useEffect(() => { 
@@ -41,7 +41,7 @@ function ModalBox({ children, className, isOpen, setIsOpen, isTransitioning, set
 
   return(
   (isOpen || isTransitioning) && 
-  <div className={`fixed z-50 top-0 left-0 w-full h-full outline-none overflow-x-hidden overflow-y-auto inset-0 bg-black/30 flex items-center justify-center p-4 ${isTransitioning && isOpen? "opacity-100" : "opacity-0"} transition-opacity`}>
+  <div className={`fixed z-50 top-0 left-0 w-full h-full outline-none overflow-x-hidden overflow-y-auto inset-0 bg-black/30 flex items-center justify-center p-4`}>
     <div ref={modalRef} className={updatedClasses}>
       {
         Children.map(children, (child) => {

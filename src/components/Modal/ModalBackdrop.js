@@ -9,7 +9,7 @@ function ModalBackdrop({children, isOpen, setIsOpen, className}) {
   // we need this transition states for showing the opening and closing animations(CSS transitions)
   // isTransition is basically the copy of isOpen state but the false state has some delay (look in useEffect)
 
-  const defaultClasses = `fixed z-50 top-0 left-0 w-full h-full outline-none overflow-x-hidden overflow-y-auto inset-0 bg-black/30 flex items-center justify-center p-4 ${isTransitioning && isOpen? "opacity-100" : "opacity-0"} transition-opacity`
+  const defaultClasses = `fixed z-50 top-0 left-0 w-full h-full outline-none overflow-x-hidden overflow-y-auto inset-0 bg-black/30 flex items-center justify-center p-4 ${isTransitioning && isOpen? "opacity-100" : "opacity-0"} transition`
 
   const updatedClasses = classNames(defaultClasses, className)
 

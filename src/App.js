@@ -4,14 +4,21 @@ import Modal from "./components/Modal";
 import Button from "./components/Button";
 import { ThemeProvider } from "./contexts";
 import { themeOptions } from "./theme";
+import Dropdown from "./components/Dropdown";
 
 function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false)
+
+  const [dropdownSingleIsOpen, setDropdownSingleIsOpen] = useState(false)
+  const [dropdownNestedIsOpen, setDropdownNestedIsOpen] = useState(false)
+
   return(
     <>
     <ThemeProvider themeOptions={themeOptions}>
 
     <div className="p-4">
+      
+      {/* === Buttons === */}
       <div className="my-4">
         <h2 className="text-xl text-gray-800">Buttons</h2>
         <div className="mt-3">
@@ -33,12 +40,49 @@ function App() {
         </div>
       </div>
 
+      {/* === Modals === */}
       <div className="my-8">
         <h2 className="text-xl text-gray-800">Modals</h2>
         <div className="mt-3">
           <Button onClick={() => setModalIsOpen(true)}>Open Modal</Button>
         </div>
       </div>
+
+      {/* === Dropdown Menus === */}
+      <div className="my-8">
+        <h2 className="text-xl text-gray-800">Dropdowns</h2>
+        <div className="mt-3">
+          <Dropdown.Wrapper isOpen={dropdownSingleIsOpen} setIsOpen={setDropdownSingleIsOpen}>
+            <Dropdown.Button>
+              Dropdown Menu
+            </Dropdown.Button>
+            <Dropdown.List>
+              <Dropdown.Item> Item One</Dropdown.Item>
+              <Dropdown.Item> Item Two</Dropdown.Item>
+              <Dropdown.Item> Item with a very very long text</Dropdown.Item>
+              <Dropdown.Item> Item Four</Dropdown.Item>
+            </Dropdown.List>
+          </Dropdown.Wrapper>
+
+          <Dropdown.Wrapper isOpen={dropdownNestedIsOpen} setIsOpen={setDropdownNestedIsOpen} className="ml-2">
+            <Dropdown.Button variant="secondary">
+              Nested Dropdown
+            </Dropdown.Button>
+            <Dropdown.List>
+              <Dropdown.Item> Item One</Dropdown.Item>
+              <Dropdown.Item> Item Two</Dropdown.Item>
+              <Dropdown.Item> Item with a very very long text</Dropdown.Item>
+              <Dropdown.Item> Item Four</Dropdown.Item>
+            </Dropdown.List>
+          </Dropdown.Wrapper>
+        </div>
+      </div>
+
+      {/* === Dropdown Menus === */}
+      <div className="my-8">
+        <h2 className="text-xl text-gray-800">Carousel</h2>
+      </div>
+
     </div>
 
     <Modal.BackDrop isOpen={modalIsOpen} setIsOpen={setModalIsOpen}>
