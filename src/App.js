@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Modal from "./components/Modal";
-import Button from "./components/Button/Button";
+import Button from "./components/Button";
 import { ThemeProvider } from "./contexts";
 import { themeOptions } from "./theme";
 
