@@ -69,4 +69,24 @@ export const themeOptions = {
     outline: "outline-sky-500",
     divide: "divide-sky-500"
   },
+  light: {
+    bg: "bg-white",
+    text: "text-white",
+    decoration: "decoration-white",
+    border: "border-white",
+    ring: "ring-white",
+    ringOffset: "ring-offset-white",
+    outline: "outline-white",
+    divide: "divide-white"
+  },
+  dark: {
+    bg: "bg-slate-600",
+    text: "text-slate-600",
+    decoration: "decoration-slate-600",
+    border: "border-slate-600",
+    ring: "ring-slate-600",
+    ringOffset: "ring-offset-slate-600",
+    outline: "outline-slate-600",
+    divide: "divide-slate-600"
+  },
 }
