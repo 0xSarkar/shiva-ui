@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import React from 'react'
 
 function NavbarBrand({ className, children, isOpen, setIsOpen }) {
-  const defaultClasses = "text-xl font-bold p-2 flex items-center justify-between"
+  const defaultClasses = "text-xl py-2 px-4 flex items-center justify-between"
   const updatedClasses = classNames(defaultClasses, className)
 
   const handleNavbarCollapse = () => {

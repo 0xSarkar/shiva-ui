@@ -8,18 +8,25 @@ import Dropdown from "./components/Dropdown";
 import Navbar from "./components/Navbar";
 
 function App() {
+
+  // Modal States
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
+  // Dropdown States
   const [dropdownSingleIsOpen, setDropdownSingleIsOpen] = useState(false)
   const [dropdownNestedIsOpen, setDropdownNestedIsOpen] = useState(false)
+
   const [dropdownInnerRightIsOpen, setDropdownInnerRightIsOpen] = useState(false)
   const [dropdownInnerLeftIsOpen, setDropdownInnerLeftIsOpen] = useState(false)
   const [dropdownRightIsOpen, setDropdownRightIsOpen] = useState(false)
   const [dropdownTopIsOpen, setDropdownTopIsOpen] = useState(false)
   const [dropdownLeftIsOpen, setDropdownLeftIsOpen] = useState(false)
 
+  // Navbar States
   const [navbarPrimaryIsOpen, setNavbarPrimaryIsOpen] = useState(false)
   const [navbarDropdown, setNavbarDropdown] = useState(false)
+
+  const [navbarSecondaryIsOpen, setNavbarSecondaryIsOpen] = useState(false)
 
   return(
     <>
@@ -28,6 +35,7 @@ function App() {
     <div className="p-4">
       
       {/* === Buttons === */}
+
       <div className="my-4">
         <h2 className="text-xl text-gray-800">Buttons</h2>
         <div className="mt-3 flex flex-wrap gap-2">
@@ -52,6 +60,7 @@ function App() {
       </div>
 
       {/* === Modals === */}
+
       <div className="my-8">
         <h2 className="text-xl text-gray-800">Modals</h2>
         <div className="mt-3">
@@ -60,6 +69,7 @@ function App() {
       </div>
 
       {/* === Dropdown Menus === */}
+
       <div className="my-8">
         <h2 className="text-xl text-gray-800">Dropdowns</h2>
         <div className="mt-3 flex flex-wrap gap-2">
@@ -151,13 +161,14 @@ function App() {
           
       </div>
 
-      {/* === Navbar === */}
+      {/* === Navbars === */}
+
       <div className="my-8">
         <h2 className="text-xl text-gray-800">Navbar</h2>
         <div className="mt-3">
           <Navbar.Wrapper isOpen={navbarPrimaryIsOpen} setIsOpen={setNavbarPrimaryIsOpen}>
             <Navbar.Body>
-              <Navbar.Brand>Shiva ui</Navbar.Brand>
+              <Navbar.Brand>Shiva UI</Navbar.Brand>
               <Navbar.List>
                 <Button variant="text" className="text-white !text-sm text-left">Home</Button>
                 <Dropdown.Wrapper isOpen={navbarDropdown} setIsOpen={setNavbarDropdown}>
@@ -175,8 +186,24 @@ function App() {
             </Navbar.Body>
           </Navbar.Wrapper>
         </div>
-      </div>
 
+        <div className="mt-3">
+          <Navbar.Wrapper isOpen={navbarSecondaryIsOpen} setIsOpen={setNavbarSecondaryIsOpen} variant="secondary">
+            <Navbar.Body>
+              <Navbar.Brand>Shiva UI</Navbar.Brand>
+              <Navbar.List className="md:justify-between max-md:bg-white max-md:shadow-lg">
+                <div className="flex flex-col md:flex-row md:items-center">
+                  <Button variant="text" className="!text-base text-left md:text-white" onClick={() => setNavbarSecondaryIsOpen(false)}>Home</Button>
+                  <Button variant="text" className="!text-base text-left md:text-white" onClick={() => setNavbarSecondaryIsOpen(false)}>Link</Button>
+                </div>
+                <div className="flex flex-col md:flex-row md:items-center">
+                  <Button variant="text" className="!text-base text-left md:text-white" onClick={() => setNavbarSecondaryIsOpen(false)}>Log out</Button>
+                </div>
+              </Navbar.List>
+            </Navbar.Body>
+          </Navbar.Wrapper>
+        </div>
+      </div>
     </div>
 
     <Modal.BackDrop isOpen={modalIsOpen} setIsOpen={setModalIsOpen}>
