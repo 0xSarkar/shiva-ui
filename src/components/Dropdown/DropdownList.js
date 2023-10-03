@@ -14,7 +14,10 @@ function DropdownList({ isOpen, setIsOpen, className, direction, children }) {
       defaultClasses = `absolute z-50 w-max bg-white border border-gray-300 shadow-lg rounded mt-1 text-gray-800 text-sm ${isTransitioning && isOpen? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1.5"} transition`
       break
     case "right":
-      defaultClasses = `absolute top-0 -right-1 z-40 w-max bg-white border border-gray-300 shadow-lg rounded mt-0.5 text-gray-800 text-sm ${isTransitioning && isOpen? "opacity-100 translate-x-full" : "opacity-0 translate-x-[calc(100%-.375rem)]"} transition`
+      defaultClasses = `absolute top-0 -right-1 z-40 w-max bg-white border border-gray-300 shadow-lg rounded text-gray-800 text-sm ${isTransitioning && isOpen? "opacity-100 translate-x-full" : "opacity-0 translate-x-[calc(100%-.375rem)]"} transition`
+      break
+    case "top":
+      defaultClasses = `absolute bottom-[calc(100%-.125rem)] left-0 z-40 w-max bg-white border border-gray-300 shadow-lg rounded mt-0.5 text-gray-800 text-sm ${isTransitioning && isOpen? "opacity-100 -translate-y-1.5" : "opacity-0 translate-y-0"} transition`
       break
   }
 

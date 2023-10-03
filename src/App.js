@@ -104,7 +104,7 @@ function App() {
               </Dropdown.List>
             </Dropdown.Wrapper>
 
-            <Dropdown.Wrapper isOpen={dropdownTopIsOpen} setIsOpen={setDropdownTopIsOpen} direction="right" className="ml-2">
+            <Dropdown.Wrapper isOpen={dropdownTopIsOpen} setIsOpen={setDropdownTopIsOpen} direction="top" className="ml-2">
               <Dropdown.Button variant="neutral">
                 Dropdown Top
               </Dropdown.Button>
