@@ -43,6 +43,7 @@ function App() {
           <Button variant="dark" className="ml-2">Dark</Button>
           <Button variant="link" className="ml-2">Link</Button>
           <Button variant="text" className="ml-2">Text</Button>
+          <Button variant="primary" disabled>Disabled</Button>
         </div>
       </div>
 
