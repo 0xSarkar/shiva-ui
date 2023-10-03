@@ -18,6 +18,9 @@ function App() {
   const [dropdownTopIsOpen, setDropdownTopIsOpen] = useState(false)
   const [dropdownLeftIsOpen, setDropdownLeftIsOpen] = useState(false)
 
+  const [navbarPrimaryIsOpen, setNavbarPrimaryIsOpen] = useState(false)
+  const [navbarDropdown, setNavbarDropdown] = useState(false)
+
   return(
     <>
     <ThemeProvider themeOptions={themeOptions}>
@@ -152,10 +155,23 @@ function App() {
       <div className="my-8">
         <h2 className="text-xl text-gray-800">Navbar</h2>
         <div className="mt-3">
-          <Navbar.Wrapper>
+          <Navbar.Wrapper isOpen={navbarPrimaryIsOpen} setIsOpen={setNavbarPrimaryIsOpen}>
             <Navbar.Body>
-              <div>abc</div>
-              <div>xyz</div>
+              <Navbar.Brand>Shiva ui</Navbar.Brand>
+              <Navbar.List>
+                <Button variant="text" className="text-white !text-sm text-left">Home</Button>
+                <Dropdown.Wrapper isOpen={navbarDropdown} setIsOpen={setNavbarDropdown}>
+                  <Dropdown.Button variant="text" className="w-full text-white uppercase">
+                    Dropdown Menu
+                  </Dropdown.Button>
+                  <Dropdown.List className="max-md:static max-md:w-[calc(100%-.5rem)] max-md:mx-auto max-md:shadow-none max-md:border-0 max-md:rounded-nonem">
+                    <Dropdown.Item> Item One</Dropdown.Item>
+                    <Dropdown.Item> Item Two</Dropdown.Item>
+                    <Dropdown.Item> Item Three</Dropdown.Item>
+                  </Dropdown.List>
+                </Dropdown.Wrapper>
+                <Button variant="text" className="text-white !text-sm text-left">Link</Button>
+              </Navbar.List>
             </Navbar.Body>
           </Navbar.Wrapper>
         </div>

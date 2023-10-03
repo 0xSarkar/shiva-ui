@@ -5,7 +5,7 @@ import Button from '../Button'
 function DropdownButton({ isOpen, setIsOpen, className, variant="primary", direction='down', children }) {
   let buttonJSX, defaultClasses, updatedClasses
 
-  defaultClasses = "pl-4 pr-2.5 flex items-center relative"
+  defaultClasses = "pl-5 pr-3 flex items-center justify-between relative"
   updatedClasses = classNames(defaultClasses, className)
 
   switch(direction) {
