@@ -11,7 +11,8 @@ function App() {
 
   const [dropdownSingleIsOpen, setDropdownSingleIsOpen] = useState(false)
   const [dropdownNestedIsOpen, setDropdownNestedIsOpen] = useState(false)
-  const [dropdownInnerIsOpen, setDropdownInnerIsOpen] = useState(false)
+  const [dropdownInnerRightIsOpen, setDropdownInnerRightIsOpen] = useState(false)
+  const [dropdownInnerLeftIsOpen, setDropdownInnerLeftIsOpen] = useState(false)
   const [dropdownRightIsOpen, setDropdownRightIsOpen] = useState(false)
   const [dropdownTopIsOpen, setDropdownTopIsOpen] = useState(false)
   const [dropdownLeftIsOpen, setDropdownLeftIsOpen] = useState(false)
@@ -77,9 +78,9 @@ function App() {
               <Dropdown.Item>Item One</Dropdown.Item>
               <Dropdown.Item>Item Two</Dropdown.Item>
               <Dropdown.ItemNested>
-                <Dropdown.Wrapper isOpen={dropdownInnerIsOpen} setIsOpen={setDropdownInnerIsOpen} direction="right">
-                  <Dropdown.Button variant="text" className="text-sm px-0">
-                    Inner Dropdown
+                <Dropdown.Wrapper isOpen={dropdownInnerRightIsOpen} setIsOpen={setDropdownInnerRightIsOpen} direction="right">
+                  <Dropdown.Button variant="text" className="!text-sm px-0">
+                    Inner Dropdown Right
                   </Dropdown.Button>
                   <Dropdown.List>
                     <Dropdown.Item>Inner Item One</Dropdown.Item>
@@ -89,6 +90,18 @@ function App() {
                 </Dropdown.Wrapper>
               </Dropdown.ItemNested>
               <Dropdown.Item>Item Four</Dropdown.Item>
+              <Dropdown.ItemNested>
+                <Dropdown.Wrapper isOpen={dropdownInnerLeftIsOpen} setIsOpen={setDropdownInnerLeftIsOpen} direction="left" className="w-full">
+                  <Dropdown.Button variant="text" className="!text-sm px-0 w-full">
+                    Dropdown Left
+                  </Dropdown.Button>
+                  <Dropdown.List>
+                    <Dropdown.Item>Inner Item One</Dropdown.Item>
+                    <Dropdown.Item>Inner Item Two</Dropdown.Item>
+                    <Dropdown.Item>Inner Item Three</Dropdown.Item>
+                  </Dropdown.List>
+                </Dropdown.Wrapper>
+              </Dropdown.ItemNested>
             </Dropdown.List>
           </Dropdown.Wrapper>
         </div>
