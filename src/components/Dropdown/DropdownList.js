@@ -11,10 +11,10 @@ function DropdownList({ isOpen, setIsOpen, className, direction, children }) {
 
   switch(direction) {
     case "down": 
-      defaultClasses = `absolute z-40 w-max bg-white border border-gray-300 shadow-lg rounded mt-0.5 text-gray-800 text-sm ${isTransitioning && isOpen? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1/2"} transition`
+      defaultClasses = `absolute z-50 w-max bg-white border border-gray-300 shadow-lg rounded mt-1 text-gray-800 text-sm ${isTransitioning && isOpen? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1.5"} transition`
       break
     case "right":
-      defaultClasses = `absolute top-0 -right-0.5 z-40 w-max bg-white border border-gray-300 shadow-lg rounded mt-0.5 text-gray-800 text-sm ${isTransitioning && isOpen? "opacity-100 translate-x-full" : "opacity-0 translate-x-1/2"} transition`
+      defaultClasses = `absolute top-0 -right-1 z-40 w-max bg-white border border-gray-300 shadow-lg rounded mt-0.5 text-gray-800 text-sm ${isTransitioning && isOpen? "opacity-100 translate-x-full" : "opacity-0 translate-x-[calc(100%-.375rem)]"} transition`
       break
   }
 

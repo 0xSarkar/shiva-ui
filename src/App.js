@@ -13,6 +13,7 @@ function App() {
   const [dropdownNestedIsOpen, setDropdownNestedIsOpen] = useState(false)
   const [dropdownInnerIsOpen, setDropdownInnerIsOpen] = useState(false)
   const [dropdownRightIsOpen, setDropdownRightIsOpen] = useState(false)
+  const [dropdownTopIsOpen, setDropdownTopIsOpen] = useState(false)
 
   return(
     <>
@@ -90,17 +91,32 @@ function App() {
             </Dropdown.List>
           </Dropdown.Wrapper>
 
-          <Dropdown.Wrapper isOpen={dropdownRightIsOpen} setIsOpen={setDropdownRightIsOpen} direction="right" className="ml-2">
-            <Dropdown.Button variant="neutral">
-              Dropdown Right
-            </Dropdown.Button>
-            <Dropdown.List>
-              <Dropdown.Item> Item One</Dropdown.Item>
-              <Dropdown.Item> Item Two</Dropdown.Item>
-              <Dropdown.Item> Item with a very very long text</Dropdown.Item>
-              <Dropdown.Item> Item Four</Dropdown.Item>
-            </Dropdown.List>
-          </Dropdown.Wrapper>
+          <div className="mt-3">
+            <Dropdown.Wrapper isOpen={dropdownRightIsOpen} setIsOpen={setDropdownRightIsOpen} direction="right">
+              <Dropdown.Button variant="neutral">
+                Dropdown Right
+              </Dropdown.Button>
+              <Dropdown.List>
+                <Dropdown.Item> Item One</Dropdown.Item>
+                <Dropdown.Item> Item Two</Dropdown.Item>
+                <Dropdown.Item> Item with a very very long text</Dropdown.Item>
+                <Dropdown.Item> Item Four</Dropdown.Item>
+              </Dropdown.List>
+            </Dropdown.Wrapper>
+
+            <Dropdown.Wrapper isOpen={dropdownTopIsOpen} setIsOpen={setDropdownTopIsOpen} direction="right" className="ml-2">
+              <Dropdown.Button variant="neutral">
+                Dropdown Top
+              </Dropdown.Button>
+              <Dropdown.List>
+                <Dropdown.Item> Item One</Dropdown.Item>
+                <Dropdown.Item> Item Two</Dropdown.Item>
+                <Dropdown.Item> Item with a very very long text</Dropdown.Item>
+                <Dropdown.Item> Item Four</Dropdown.Item>
+              </Dropdown.List>
+            </Dropdown.Wrapper>
+          </div>
+          
         </div>
       </div>
 
