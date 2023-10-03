@@ -14,6 +14,7 @@ function App() {
   const [dropdownInnerIsOpen, setDropdownInnerIsOpen] = useState(false)
   const [dropdownRightIsOpen, setDropdownRightIsOpen] = useState(false)
   const [dropdownTopIsOpen, setDropdownTopIsOpen] = useState(false)
+  const [dropdownLeftIsOpen, setDropdownLeftIsOpen] = useState(false)
 
   return(
     <>
@@ -55,7 +56,7 @@ function App() {
       {/* === Dropdown Menus === */}
       <div className="my-8">
         <h2 className="text-xl text-gray-800">Dropdowns</h2>
-        <div className="mt-3">
+        <div className="mt-3 flex items-center">
           <Dropdown.Wrapper isOpen={dropdownSingleIsOpen} setIsOpen={setDropdownSingleIsOpen}>
             <Dropdown.Button>
               Dropdown Menu
@@ -90,34 +91,46 @@ function App() {
               <Dropdown.Item>Item Four</Dropdown.Item>
             </Dropdown.List>
           </Dropdown.Wrapper>
-
-          <div className="mt-3">
-            <Dropdown.Wrapper isOpen={dropdownRightIsOpen} setIsOpen={setDropdownRightIsOpen} direction="right">
-              <Dropdown.Button variant="neutral">
-                Dropdown Right
-              </Dropdown.Button>
-              <Dropdown.List>
-                <Dropdown.Item> Item One</Dropdown.Item>
-                <Dropdown.Item> Item Two</Dropdown.Item>
-                <Dropdown.Item> Item with a very very long text</Dropdown.Item>
-                <Dropdown.Item> Item Four</Dropdown.Item>
-              </Dropdown.List>
-            </Dropdown.Wrapper>
-
-            <Dropdown.Wrapper isOpen={dropdownTopIsOpen} setIsOpen={setDropdownTopIsOpen} direction="top" className="ml-2">
-              <Dropdown.Button variant="neutral">
-                Dropdown Top
-              </Dropdown.Button>
-              <Dropdown.List>
-                <Dropdown.Item> Item One</Dropdown.Item>
-                <Dropdown.Item> Item Two</Dropdown.Item>
-                <Dropdown.Item> Item with a very very long text</Dropdown.Item>
-                <Dropdown.Item> Item Four</Dropdown.Item>
-              </Dropdown.List>
-            </Dropdown.Wrapper>
-          </div>
-          
         </div>
+
+        <div className="mt-3 flex items-center">
+          <Dropdown.Wrapper isOpen={dropdownRightIsOpen} setIsOpen={setDropdownRightIsOpen} direction="right">
+            <Dropdown.Button variant="neutral">
+              Dropdown Right
+            </Dropdown.Button>
+            <Dropdown.List>
+              <Dropdown.Item> Item One</Dropdown.Item>
+              <Dropdown.Item> Item Two</Dropdown.Item>
+              <Dropdown.Item> Item with a very very long text</Dropdown.Item>
+              <Dropdown.Item> Item Four</Dropdown.Item>
+            </Dropdown.List>
+          </Dropdown.Wrapper>
+
+          <Dropdown.Wrapper isOpen={dropdownTopIsOpen} setIsOpen={setDropdownTopIsOpen} direction="top" className="ml-2">
+            <Dropdown.Button variant="neutral">
+              Dropdown Top
+            </Dropdown.Button>
+            <Dropdown.List>
+              <Dropdown.Item> Item One</Dropdown.Item>
+              <Dropdown.Item> Item Two</Dropdown.Item>
+              <Dropdown.Item> Item with a very very long text</Dropdown.Item>
+              <Dropdown.Item> Item Four</Dropdown.Item>
+            </Dropdown.List>
+          </Dropdown.Wrapper>
+
+          <Dropdown.Wrapper isOpen={dropdownLeftIsOpen} setIsOpen={setDropdownLeftIsOpen} direction="left" className="ml-2">
+            <Dropdown.Button variant="neutral">
+              Dropdown Left
+            </Dropdown.Button>
+            <Dropdown.List>
+              <Dropdown.Item> Item One</Dropdown.Item>
+              <Dropdown.Item> Item Two</Dropdown.Item>
+              <Dropdown.Item> Item with a very very long text</Dropdown.Item>
+              <Dropdown.Item> Item Four</Dropdown.Item>
+            </Dropdown.List>
+          </Dropdown.Wrapper>
+        </div>
+          
       </div>
 
       {/* === Dropdown Menus === */}

@@ -19,6 +19,9 @@ function DropdownList({ isOpen, setIsOpen, className, direction, children }) {
     case "top":
       defaultClasses = `absolute bottom-[calc(100%-.125rem)] left-0 z-40 w-max bg-white border border-gray-300 shadow-lg rounded mt-0.5 text-gray-800 text-sm ${isTransitioning && isOpen? "opacity-100 -translate-y-1.5" : "opacity-0 translate-y-0"} transition`
       break
+    case "left":
+      defaultClasses = `absolute right-[calc(100%-.125rem)] top-0 z-40 w-max bg-white border border-gray-300 shadow-lg rounded text-gray-800 text-sm ${isTransitioning && isOpen? "opacity-100 -translate-x-1.5" : "opacity-0 translate-x-0"} transition`
+      break
   }
 
   const updatedClasses = classNames(defaultClasses, className)
