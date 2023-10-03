@@ -5,6 +5,7 @@ import Button from "./components/Button";
 import { ThemeProvider } from "./contexts";
 import { themeOptions } from "./theme";
 import Dropdown from "./components/Dropdown";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false)
@@ -26,23 +27,23 @@ function App() {
       {/* === Buttons === */}
       <div className="my-4">
         <h2 className="text-xl text-gray-800">Buttons</h2>
-        <div className="mt-3">
+        <div className="mt-3 flex flex-wrap gap-2">
           <Button variant="primary">Primary</Button>
-          <Button variant="secondary" className="ml-2">Secondary</Button>
-          <Button variant="neutral" className="ml-2">Neutral</Button>
-          <Button variant="boxed" className="ml-2">Boxed</Button>
-        </div>
-        <div className="mt-3">
-          <Button variant="success">Success</Button>
-          <Button variant="danger" className="ml-2">Danger</Button>
-          <Button variant="warning" className="ml-2">Warning</Button>
-          <Button variant="info" className="ml-2">Info</Button>
-        </div>
-        <div className="mt-3">
+          <Button variant="secondary">Secondary</Button>
+          <Button variant="neutral">Neutral</Button>
+          <Button variant="boxed">Boxed</Button>
           <Button variant="light">Light</Button>
-          <Button variant="dark" className="ml-2">Dark</Button>
-          <Button variant="link" className="ml-2">Link</Button>
-          <Button variant="text" className="ml-2">Text</Button>
+          <Button variant="dark">Dark</Button>
+        </div>
+        <div className="mt-3 flex flex-wrap gap-2">
+          <Button variant="success">Success</Button>
+          <Button variant="danger">Danger</Button>
+          <Button variant="warning">Warning</Button>
+          <Button variant="info">Info</Button>
+        </div>
+        <div className="mt-3 flex flex-wrap gap-2">
+          <Button variant="link">Link</Button>
+          <Button variant="text">Text</Button>
           <Button variant="primary" disabled>Disabled</Button>
         </div>
       </div>
@@ -58,7 +59,7 @@ function App() {
       {/* === Dropdown Menus === */}
       <div className="my-8">
         <h2 className="text-xl text-gray-800">Dropdowns</h2>
-        <div className="mt-3 flex items-center">
+        <div className="mt-3 flex flex-wrap gap-2">
           <Dropdown.Wrapper isOpen={dropdownSingleIsOpen} setIsOpen={setDropdownSingleIsOpen}>
             <Dropdown.Button>
               Dropdown Menu
@@ -71,7 +72,7 @@ function App() {
             </Dropdown.List>
           </Dropdown.Wrapper>
 
-          <Dropdown.Wrapper isOpen={dropdownNestedIsOpen} setIsOpen={setDropdownNestedIsOpen} className="ml-2" direction={"down"}>
+          <Dropdown.Wrapper isOpen={dropdownNestedIsOpen} setIsOpen={setDropdownNestedIsOpen} direction={"down"}>
             <Dropdown.Button variant="secondary">
               Nested Dropdown
             </Dropdown.Button>
@@ -107,7 +108,7 @@ function App() {
           </Dropdown.Wrapper>
         </div>
 
-        <div className="mt-3 flex items-center">
+        <div className="mt-3 flex flex-wrap gap-2">
           <Dropdown.Wrapper isOpen={dropdownRightIsOpen} setIsOpen={setDropdownRightIsOpen} direction="right">
             <Dropdown.Button variant="neutral">
               Dropdown Right
@@ -120,7 +121,7 @@ function App() {
             </Dropdown.List>
           </Dropdown.Wrapper>
 
-          <Dropdown.Wrapper isOpen={dropdownTopIsOpen} setIsOpen={setDropdownTopIsOpen} direction="top" className="ml-2">
+          <Dropdown.Wrapper isOpen={dropdownTopIsOpen} setIsOpen={setDropdownTopIsOpen} direction="top">
             <Dropdown.Button variant="neutral">
               Dropdown Top
             </Dropdown.Button>
@@ -132,7 +133,7 @@ function App() {
             </Dropdown.List>
           </Dropdown.Wrapper>
 
-          <Dropdown.Wrapper isOpen={dropdownLeftIsOpen} setIsOpen={setDropdownLeftIsOpen} direction="left" className="ml-2">
+          <Dropdown.Wrapper isOpen={dropdownLeftIsOpen} setIsOpen={setDropdownLeftIsOpen} direction="left">
             <Dropdown.Button variant="neutral">
               Dropdown Left
             </Dropdown.Button>
@@ -147,9 +148,17 @@ function App() {
           
       </div>
 
-      {/* === Dropdown Menus === */}
+      {/* === Navbar === */}
       <div className="my-8">
-        <h2 className="text-xl text-gray-800">Carousel</h2>
+        <h2 className="text-xl text-gray-800">Navbar</h2>
+        <div className="mt-3">
+          <Navbar.Wrapper>
+            <Navbar.Body>
+              <div>abc</div>
+              <div>xyz</div>
+            </Navbar.Body>
+          </Navbar.Wrapper>
+        </div>
       </div>
 
     </div>
